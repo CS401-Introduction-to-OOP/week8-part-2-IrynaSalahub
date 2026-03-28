@@ -18,8 +18,8 @@ class Program
         PointRef pr2 = pr1;
         
         pr2.X = 10; 
-        
-        Console.Write("pr1: "); pr1.Print(); // Виведе X: 10
-        Console.Write("pr2: "); pr2.Print(); // Виведе X: 10
+    
+        Console.Write("pr1: "); pr1.Print(); 
+        Console.Write("pr2: "); pr2.Print(); 
     }
 }
