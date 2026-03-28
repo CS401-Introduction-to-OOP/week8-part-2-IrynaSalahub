@@ -1,6 +1,6 @@
 ﻿namespace Week8;
 
-public class ResourceManager<T> where T: Resource
+public class ResourceManager<T>: IDisposable where T: Resource
 {
     private readonly List<T> _resources = new();
     public void Add(T resource)
@@ -23,5 +23,15 @@ public class ResourceManager<T> where T: Resource
             resource.Close();
         }
     }
-    
+
+    public void Dispose()
+    {
+        foreach (var resource in _resources)
+        {
+            if (resource is IDisposable disposable)
+            {
+                disposable.Dispose();
+            }
+        }
+    }
 }
